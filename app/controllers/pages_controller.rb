@@ -19,9 +19,12 @@ class PagesController < ApplicationController
     end
   end
 
+  def edit
+    @page = Page.find(params[:id])
+  end
   private
 
     def page_params
-      params.require(:page).permit(:title, :author:, :body) 
+      params.require(:page).permit(:title, :author, :body) 
     end
 end
